@@ -1,0 +1,56 @@
+/*
+	@ Harris Christiansen (Harris@HarrisChristiansen.com)
+	File Created: November 2017
+	Project: Sudoku
+*/
+
+/* ------------------------ Sudoku Board ------------------------- */
+
+#sudoku {
+	border: 1px solid #000;
+	padding: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+}
+
+#sudoku tr td {
+	position: relative;
+	border: 1px solid #000;
+	width: 40px;
+	height: 40px;
+	padding: 0px;
+}
+
+#sudoku input {
+	border: 0px solid;
+	height: 40px;
+	width: 40px;
+	color: #444;
+	background-color: transparent;
+	font-size: 26px;
+	text-align: center;
+}
+
+#sudoku input:focus {
+	background-color: rgba(0,0,0,0.1);
+}
+
+#sudoku .tile_overlay {
+	height: 40px;
+	width: 20px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	font-size: 11px;
+	word-wrap: break-word;
+}
+
+/* ------------------------ Sudoku Board Controls ------------------------- */
+
+#controls {
+	padding-top: 20px;
+	text-align: center;
+}
+
+/* ------------------------ End ------------------------- */
