@@ -4,10 +4,16 @@
 	Project: Sudoku
 */
 
+let ROW_INDEXES = COL_INDEXES = [0,1,2,3,4,5,6,7,8];
+
 
 $(document).ready(function() {
 	$(".updatePossibilities").click(function(evt) {
 		updatePossibilities();
+	});
+
+	$(".highlightTest").click(function(evt) {
+		$(".possibility-1").addClass("highlight");
 	});
 });
 
@@ -15,7 +21,7 @@ function updatePossibilities() {
 	board = readBoard();
 
 	$("#sudoku td").each(function(i, item) {
-		possibilities = getPossibilities(board, i);
+		possibilities = getPossibilitiesString(board, i);
 		$(this).find(".tile_overlay").html(possibilities);
 	});
 }
@@ -49,7 +55,7 @@ function getPossibilities(board, index) {
 	possibilities = [1,2,3,4,5,6,7,8,9];
 
 	// Check Row
-	for (c in [0,1,2,3,4,5,6,7,8]) {
+	for (c in ROW_INDEXES) {
 		value = parseInt(board[y][c]);
 		var i = possibilities.indexOf(value);
 		if (i != -1) {
@@ -58,7 +64,7 @@ function getPossibilities(board, index) {
 	}
 
 	// Check Column
-	for (r in [0,1,2,3,4,5,6,7,8]) {
+	for (r in COL_INDEXES) {
 		value = parseInt(board[r][x]);
 		var i = possibilities.indexOf(value);
 		if (i != -1) {
@@ -78,4 +84,13 @@ function getPossibilities(board, index) {
 	}
 
 	return possibilities;
+}
+
+function getPossibilitiesString(board, index) {
+	possibilities = getPossibilities(board, i);
+	result = "";
+	for (i in possibilites) {
+		result += '<span class="possibility-'+i+'">i</span>';
+	}
+	return result;
 }

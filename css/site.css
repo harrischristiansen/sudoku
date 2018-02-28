@@ -46,6 +46,10 @@
 	word-wrap: break-word;
 }
 
+.highlight {
+	color: orange;
+}
+
 /* ------------------------ Sudoku Board Controls ------------------------- */
 
 #controls {
